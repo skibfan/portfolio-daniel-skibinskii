@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, CardMedia, Link, Typography } from "@mui/material"
+import { Card, CardContent, CardMedia, Link, Typography } from "@mui/material"
 import { ReactElement } from "react"
 import safeLogo from '../assets/SafeLogo.png'
 

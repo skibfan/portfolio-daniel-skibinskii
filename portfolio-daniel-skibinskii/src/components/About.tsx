@@ -1,5 +1,4 @@
 import { Avatar, Box, CardContent, Stack, Typography, Card } from "@mui/material";
-import { teal } from "@mui/material/colors";
 import { ReactElement } from "react";
 import ds_profile from '../assets/ds_profile.png'
 import Grid from '@mui/material/Grid2';
