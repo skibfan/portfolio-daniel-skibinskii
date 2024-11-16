@@ -1,84 +1,78 @@
-import { Avatar, Box, CardContent, Stack, Typography, Card } from "@mui/material";
-import { ReactElement } from "react";
+import { Avatar, Box, CardContent, Stack, Typography, Card, Grow } from "@mui/material";
+import { ReactElement, useEffect, useState } from "react";
 import ds_profile from '../assets/ds_profile.png'
-import Grid from '@mui/material/Grid2';
-import Paper from '@mui/material/Paper';
-import { styled } from '@mui/material/styles';
-  
-
-const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: '#E6E6E6',
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: 'center',
-    fontFamily: 'Heebo, Arial, sans-serif',
-    fontWeight: 600,
-    color: theme.palette.text.secondary,
-    ...theme.applyStyles('dark', {
-      backgroundColor: '#1A2027',
-    }),
-  }));
+import Slide from '@mui/material/Slide';
+import MyStack from "./MyStack";
+import { ReactTyped } from "react-typed";
 
 const About = (): ReactElement => {
 
-    return (<Box id='about' sx={{width: '100%', height: '500px',textAlign: 'right', 
-    display: 'flex', justifyContent: "flex-end", alignItems: 'center'
+    const [checked, setChecked] = useState(false)
+
+    useEffect(() =>{
+        setChecked(true)
+    }, [])
+
+    return (<Box id='about' sx={{width: '100%', minHeight: '500px',textAlign: 'right', 
+    display: 'flex', justifyContent: "center", alignItems: 'center', p: 3,
+    overflow: 'hidden' // TODO: consider changing
     }}>
-        <Stack direction={'column'} spacing={2}>
-    <Stack direction={'row'} spacing={4} justifyContent="center">
-        <Card variant="elevation" sx={{backgroundColor: '#FFB364', color: '#034A61'}} >
+        <Stack direction={'column'} spacing={2} alignItems='center'>
+            <Stack direction={{xs: 'column-reverse', md: 'row'}} spacing={4} justifyContent="center"
+            alignItems='center'
+            sx={{width: '100%',
+                flexWrap: 'wrap', // TODO: consider removing
+            }}>
+                <Grow in={checked} timeout={1200}>
+                <Card variant="elevation" sx={{backgroundColor: '#003333', color: '#034A61', 
+                    maxWidth: '500px', p: 2,
+                     width: {xs: '500px', md: '600px'},
+                     height: {xs: '100px', md: '100px'},
+                     boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
+                     borderRadius: '10px'
+                    }} >
 
-        <CardContent sx={{width: '500px', 
-            alignItems: 'center', textAlign: 'start', display: 'flex', flexDirection: 'column', justifyContent:'center', 
-            }} >
-            <Typography  variant="h5" style={{fontFamily: 'Heebo, Arial, sans-serif', fontWeight: '600'}}>
-                Hi! My name is Daniel and I'm a Fullstack Developer.
-                </Typography> 
-                <Typography variant="h5" style={{fontFamily: 'Heebo, Arial, sans-serif', fontWeight: '600'}}>
-                    On this page you can learn a little more about me, so feel free to explore!
-                </Typography>
-          </CardContent>
-          </Card>
-        <Typography variant="h2" style={{fontFamily: 'Heebo, Arial, sans-serif', fontWeight: '800'}}>
-            Daniel<br/> Skibinskii</Typography>
-        <Avatar
-            sx={{ bgcolor: '#2A87A6', width: 200, height: 200 }}
-            alt="Daniel Skibinskii"
-            src={ds_profile}
-        />
-        <Box sx={{width: "5px", height: 0}}/>
+                <CardContent sx={{ textAlign: 'start', }} >
+                    <Typography  variant="h5" sx={{fontWeight: '600', mt: 1,
+                   color: 'white'
+                    }}>
+                        {"<"}
+                        <ReactTyped
+                        strings={["Hi! My name is Daniel and I'm a Fullstack Developer.", "On this page you can learn a little more about me. Feel free to explore"] }
+                        typeSpeed={30}
+                        backDelay={2000}
+                        backSpeed={8}
+                        cursorChar=">"
+                        showCursor
+                        />
+                             
+                        </Typography> 
 
-    </Stack>
-    <Box sx={{height: '45px'}}/>
-    <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-  <Grid size={2}>
-    <Item>React</Item>
-  </Grid>
-  <Grid size={2}>
-    <Item>JavaScript</Item>
-  </Grid>
-  <Grid size={2}>
-    <Item>Node.JS</Item>
-  </Grid>
-  <Grid size={2}>
-    <Item>TypeScript</Item>
-  </Grid>
-</Grid>
-
-    <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-  <Grid size={2}>
-    <Item>HTML</Item>
-  </Grid>
-  <Grid size={2}>
-    <Item>CSS</Item>
-  </Grid>
-  <Grid size={2}>
-    <Item>Git</Item>
-  </Grid>
-  <Grid size={2}>
-    <Item>PgAdmin</Item>
-  </Grid>
-</Grid>
+                </CardContent>
+                </Card>
+                </Grow>
+                
+                <Slide direction="down" in={checked} mountOnEnter unmountOnExit timeout={1000}>
+                
+                <Typography variant="h2" style={{fontWeight: '800', textAlign: 'center', color: 'white'}}>
+                    Daniel<br/> Skibinskii</Typography>
+                    </Slide>
+                    <Slide direction="left" in={checked} mountOnEnter unmountOnExit>
+                <Avatar
+                    sx={{ bgcolor: '#003333', width: { xs: 150, md: 300 }, height: { xs: 150, md: 300 },
+                    border: '4px solid white',
+                    boxShadow: '0px 4px 15px rgba(0, 0, 0, 0.3)', 
+                }}
+                    alt="Daniel Skibinskii"
+                    src={ds_profile}
+                    
+                />
+                </Slide>
+                <Box sx={{width: "5px", height: 0}}/>
+                
+            </Stack>
+            <Box sx={{height: '45px'}}/>
+                <MyStack />
     </Stack>
 
     </Box>)
