@@ -7,7 +7,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import Typography from '@mui/material/Typography';
 import telavivian from '../assets/telavivian.png'
-import { CardMedia, Grow, Link } from '@mui/material';
+import { CardMedia, Link } from '@mui/material';
 import safeLogo from '../assets/SafeLogo.png'
 
 
