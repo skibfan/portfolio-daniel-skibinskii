@@ -11,15 +11,15 @@ import { CardMedia, Grow, Link } from '@mui/material';
 import safeLogo from '../assets/SafeLogo.png'
 
 
-export default function CustomizedTimeline() {
+const MyProjects = () => {
   return (
     <Timeline id='projects'
-    position="alternate"
+    position="right"
     sx={{marginTop: '75px'}}>
       
         {/* Telavivian  */}
       <TimelineItem>
-      <TimelineOppositeContent
+      <TimelineContent
           sx={{ py: '12px', px: 2, m: 'auto 0' }}
           align="right"
         >
@@ -31,7 +31,7 @@ export default function CustomizedTimeline() {
           </Typography>
           </Link>
           <Typography>Explore the city you know!</Typography>
-        </TimelineOppositeContent>
+        </TimelineContent>
 
         <TimelineSeparator sx={{minHeight: '350px'}}>
           <TimelineConnector />
@@ -63,37 +63,38 @@ export default function CustomizedTimeline() {
             </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <Grow in={true} timeout={6200}>
-        <TimelineContent sx={{ py: '12px', px: 2, m: 'auto 0' }} align="right">
-         
-          <Typography variant="h6" component="span"
-          sx={{fontWeight: 700}}>
-            Stack
-          </Typography>
-          <Typography sx={{maxWidth: '500px'}}>React, JavaScript, Node.Js, TypeScript, Redux, Axios, Bcrypt, Router, Cookies, cors, express, dotenv, Leaflet, MUI, Vite, JsonWebToken, HTML, CSS</Typography>
+          <TimelineOppositeContent sx={{ py: '12px', px: 2, m: 'auto 0', }} align="left">
           
-        </TimelineContent>
-        </Grow>
+            <Typography variant="h6" component="span"
+            sx={{fontWeight: 700}}>
+              Stack
+            </Typography>
+            <Typography sx={{maxWidth: '500px'}}>React, JavaScript, Node.Js, TypeScript, Redux, Axios, Bcrypt, Router, Cookies, cors, express, dotenv, Leaflet, MUI, Vite, JsonWebToken, HTML, CSS</Typography>
+            
+        </TimelineOppositeContent>
       </TimelineItem>
       
 
       {/* SAFE */}
       <TimelineItem>
-      <TimelineOppositeContent
-          sx={{ py: '12px', px: 2, m: 'auto 0' }}
-          align="right"
-        >
-          
 
+
+      <TimelineContent sx={{ py: '12px', px: 2, m: 'auto 0' }} align="right">
+        <Link href='https://safeaiapp.com' color="inherit">
           <Typography variant="h6" component="span"
-          sx={{fontWeight: 700}}>
-            Stack
-          </Typography>
-          <Typography sx={{maxWidth: '500px'}}>Cross-Platform Development, IOS, Android, UI-UX Design, Flutter, Firebase, JSON, Dart, Swift, App Stores for iOS and Android, GIT, Jira, Figma</Typography>
+          sx={{fontWeight: 700}}
           
+          >
+            SafeAI
+          </Typography>
+          </Link>
+          <Typography sx={{maxWidth: '500px'}}>Your AI-powered virtual companion for overcoming
+            mental challenges.
+            Anytime. Anywhere.</Typography>
 
 
-        </TimelineOppositeContent>
+        </TimelineContent>
+      
 
         <TimelineSeparator sx={{minHeight: '350px'}}>
           <TimelineConnector  />
@@ -126,23 +127,21 @@ export default function CustomizedTimeline() {
             </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <Grow in={true} timeout={6200}>
-        <TimelineContent sx={{ py: '12px', px: 2, m: 'auto 0' }} align="right">
-        <Link href='https://safeaiapp.com' color="inherit">
-          <Typography variant="h6" component="span"
-          sx={{fontWeight: 700}}
-          
+       
+          <TimelineOppositeContent
+            sx={{ py: '12px', px: 2, m: 'auto 0' }}
+            align="right"
           >
-            SafeAI
-          </Typography>
-          </Link>
-          <Typography sx={{maxWidth: '500px'}}>Your AI-powered virtual companion for overcoming
-            mental challenges.
-            Anytime. Anywhere.</Typography>
+            
 
+            <Typography variant="h6" component="span"
+            sx={{fontWeight: 700}}>
+              Stack
+            </Typography>
+            <Typography sx={{maxWidth: '500px'}}>Cross-Platform Development, IOS, Android, UI-UX Design, Flutter, Firebase, JSON, Dart, Swift, App Stores for iOS and Android, GIT, Jira, Figma</Typography>
+            
+          </TimelineOppositeContent>
 
-        </TimelineContent>
-        </Grow>
       </TimelineItem>
       
 
@@ -152,3 +151,5 @@ export default function CustomizedTimeline() {
     </Timeline>
   );
 }
+
+export default MyProjects
