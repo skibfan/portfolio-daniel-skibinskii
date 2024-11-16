@@ -9,7 +9,7 @@ const Header = () => {
 <Stack spacing={2} direction={"row"} justifyContent={"space-between"}>
     
 <Stack spacing={2} direction={"row"} >
-<Box width='35px'/>
+<Box sx={{width: {xs: 0, md: '35px'}}}/>
         <Button href='#about' sx={{color: '#fff'}} >About</Button>
         {<Button href='#projects' sx={{color: '#fff'}}>Work</Button>}
 </Stack>
