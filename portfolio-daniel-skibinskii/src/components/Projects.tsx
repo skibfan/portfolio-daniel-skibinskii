@@ -83,17 +83,16 @@ export default function CustomizedTimeline() {
           sx={{ py: '12px', px: 2, m: 'auto 0' }}
           align="right"
         >
-          <Link href='https://safeaiapp.com' color="inherit">
-          <Typography variant="h6" component="span"
-          sx={{fontWeight: 700}}
           
-          >
-            SafeAI
+
+          <Typography variant="h6" component="span"
+          sx={{fontWeight: 700}}>
+            Stack
           </Typography>
-          </Link>
-          <Typography sx={{maxWidth: '500px'}}>Your AI-powered virtual companion for overcoming
-            mental challenges.
-            Anytime. Anywhere.</Typography>
+          <Typography sx={{maxWidth: '500px'}}>Cross-Platform Development, IOS, Android, UI-UX Design, Flutter, Firebase, JSON, Dart, Swift, App Stores for iOS and Android, GIT, Jira, Figma</Typography>
+          
+
+
         </TimelineOppositeContent>
 
         <TimelineSeparator sx={{minHeight: '350px'}}>
@@ -129,13 +128,19 @@ export default function CustomizedTimeline() {
         </TimelineSeparator>
         <Grow in={true} timeout={6200}>
         <TimelineContent sx={{ py: '12px', px: 2, m: 'auto 0' }} align="right">
-         
+        <Link href='https://safeaiapp.com' color="inherit">
           <Typography variant="h6" component="span"
-          sx={{fontWeight: 700}}>
-            Stack
-          </Typography>
-          <Typography sx={{maxWidth: '500px'}}>Cross-Platform Development, IOS, Android, UI-UX Design, Flutter, Firebase, JSON, Dart, Swift, App Stores for iOS and Android, GIT, Jira, Figma</Typography>
+          sx={{fontWeight: 700}}
           
+          >
+            SafeAI
+          </Typography>
+          </Link>
+          <Typography sx={{maxWidth: '500px'}}>Your AI-powered virtual companion for overcoming
+            mental challenges.
+            Anytime. Anywhere.</Typography>
+
+
         </TimelineContent>
         </Grow>
       </TimelineItem>

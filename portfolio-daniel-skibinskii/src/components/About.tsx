@@ -26,8 +26,8 @@ const About = (): ReactElement => {
                 <Grow in={checked} timeout={1200}>
                 <Card variant="elevation" sx={{backgroundColor: '#003333', color: '#034A61', 
                     maxWidth: '500px', p: 2,
-                     width: {xs: '500px', md: '600px'},
-                     height: {xs: '100px', md: '100px'},
+                     width: {xs: '450px', md: '600px'},
+                     height: {xs: '115px', md: '100px'},
                      boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.3)',
                      borderRadius: '10px'
                     }} >
