@@ -15,31 +15,43 @@ import swiftimg from '../assets/stack_icons/SwiftLogo.png'
 import gitimg from '../assets/stack_icons/gitLogo.png'
 import { Autoplay, Pagination } from "swiper/modules"; 
 
-const stack = [reactimg, tsimg, nodeimg, javascriptimg, htmlimg, cssimg, gitimg, pgadminimg, swiftimg, flutterimg ]
+const stack = [
+  { src: reactimg, label: 'React' },
+  { src: tsimg, label: 'TypeScript' },
+  { src: nodeimg, label: 'Node.js' },
+  { src: javascriptimg, label: 'JavaScript' },
+  { src: htmlimg, label: 'HTML' },
+  { src: cssimg, label: 'CSS' },
+  { src: gitimg, label: 'Git' },
+  { src: pgadminimg, label: 'PostgreSQL' },
+  { src: swiftimg, label: 'Swift' },
+  { src: flutterimg, label: 'Flutter' },
+]
+
 const MyStack = () => {
   return (
     <Box sx={{ maxWidth: {xs:'600px', md: '900px'}, overflow: 'hidden', padding: '0 40px' }}>
       <Swiper
       className="stack-swiper"
         spaceBetween={10}
-        slidesPerView={3} 
+        slidesPerView={3}
         centeredSlides
         loop
-        autoplay={{ delay: 2500 }} 
-        
+        autoplay={{ delay: 2500 }}
+
         breakpoints={{
           640: { slidesPerView: 1, spaceBetween: 10 },
           768: { slidesPerView: 3, spaceBetween: 15 },
           1024: { slidesPerView: 3, spaceBetween: 20 },
         }}
         pagination={{
-            clickable: true, 
-            dynamicBullets: true, 
+            clickable: true,
+            dynamicBullets: true,
           }}
           modules={[Autoplay, Pagination]}
       >
-        {stack.map((elem) => (
-          <SwiperSlide key={elem}
+        {stack.map(({ src, label }) => (
+          <SwiperSlide key={label}
           style={{
             overflow: 'hidden',
             display: 'flex',
@@ -49,8 +61,8 @@ const MyStack = () => {
           >
             <Box
                 component="img"
-                src={elem}
-                alt={"JS"}
+                src={src}
+                alt={label}
                 sx={{
                   width: {xs: '60px', md: '100px'},
                   height: {xs: '60px', md: '100px'},

@@ -2,7 +2,7 @@ import { Box, Button, Stack } from '@mui/material'
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
-import CV_DanielSkibinskii from '../assets/CV_Daniel_Skibinskii __Full_Stack.pdf'
+import CV_DanielSkibinskii from '../assets/CV_Daniel_Skibinskii_Full_Stack.pdf'
 
 const Header = () => {
     return(<div id="header">
@@ -11,12 +11,14 @@ const Header = () => {
 <Stack spacing={2} direction={"row"} >
 <Box sx={{width: {xs: 0, md: '35px'}}}/>
         <Button href='#about' sx={{color: '#fff'}} >About</Button>
-        {<Button href='#projects' sx={{color: '#fff'}}>Work</Button>}
+        <Button href='#projects' sx={{color: '#fff'}}>Work</Button>
+        <Button href='#contact' sx={{color: '#fff'}}>Contact</Button>
 </Stack>
 <Stack spacing={2} direction={"row"} >
         {<Button href='https://www.linkedin.com/in/skibdan' startIcon={<LinkedInIcon/>} sx={{color: '#fff'}}>Linkedin</Button>}
         {<Button href='https://github.com/skibfan/' startIcon={<GitHubIcon/>} sx={{color: '#fff'}}>GitHub</Button>}
-        <Button href={CV_DanielSkibinskii} startIcon={<FileDownloadIcon/>} 
+        <Button href={CV_DanielSkibinskii} startIcon={<FileDownloadIcon/>}
+        aria-label="Download CV"
         sx={{color: '#fff'}} download='Daniel_Skibinskii_Full_Stack.pdf'></Button>
         </Stack>
     </Stack>
