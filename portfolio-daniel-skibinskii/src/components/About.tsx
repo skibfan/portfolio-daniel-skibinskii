@@ -54,7 +54,7 @@ const About = (): ReactElement => {
                 
                 <Slide direction="down" in={checked} mountOnEnter unmountOnExit timeout={1000}>
                 
-                <Typography variant="h2" style={{fontWeight: '800', textAlign: 'center', color: 'white'}}>
+                <Typography variant="h2" sx={{fontWeight: '800', textAlign: 'center', color: 'white'}}>
                     Daniel<br/> Skibinskii</Typography>
                     </Slide>
                     <Slide direction="left" in={checked} mountOnEnter unmountOnExit>
